@@ -8,8 +8,8 @@ export const Welcome = () => {
         <p className={`tittle`}>Hi</p>
         <p className={`tittle`}>there,</p>
         <p className={`tittle`}>I</p>
+        <p className={`tittle`}> love</p>
         <p className={`tittle`}> build</p>
-        <p className={`tittle`}> web</p>
         <p className={`tittle`}> apps.</p>
       </div>
       <img className={styles.me} src={me} alt="me" />

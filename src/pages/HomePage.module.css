@@ -7,34 +7,38 @@
     color: #f7f7f7;
 }
 .homePage{
+    position: relative;
     display: grid;
     grid-template-rows:auto 1fr auto;
 }
 .header{
+    width: 100%;
+    position: fixed;
     display: grid;
     grid-template-columns: repeat(12,1fr);
     align-items: center;
+    gap: 10px;
 }
-.header div{
+.menu{
     grid-column: 5/11;
+    grid-row: 1/2;
     height: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    position: relative;
 }
-
-.header div p{
-    position: fixed;
-    top: 0;
+nav{
+    display: flex;
 }
-.main{
-    display: grid;
-    grid-template-rows: repeat(3,100vh);
+nav ul{
+    display: flex;
 }
-
+nav ul li:hover{
+    color: #60dafb;
+}
 .switch {
-    grid-column: 3/4;
+    grid-column: 3/5;
+    grid-row: 1/2;
     position: relative;
     display: flex;
     width: 60px;
@@ -88,9 +92,34 @@ input:checked + .slider:before {
 
 /* Rounded sliders */
 .slider.round {
-border-radius: 34px;
+    border-radius: 34px;
 }
 
 .slider.round:before {
-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.main{
+    display: grid;
+    grid-template-rows: repeat(3,100vh);
+    justify-items: center;
+}
+footer{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    align-items: center;
+    gap: 10px;
+}
+footer div{
+    grid-column: 3/11;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+footer div a {
+    width: 100px;
+}
+footer div a img{
+    width: 100%;
+    margin: 1em;
 }
