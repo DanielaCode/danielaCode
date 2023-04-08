@@ -22,7 +22,7 @@
     width: 50px;
     margin-right: 1rem;
 }
-.container .lan{
+.container .lanl{
     margin: 1em;
     padding-left: 1em;
     width: 200px;
@@ -35,9 +35,28 @@
     box-shadow:  20px 20px 60px #d2d2d2,
                  -20px -20px 60px #ffffff;
 }
-.lan:hover{
+.container .land{
+    margin: 1em;
+    padding-left: 1em;
+    width: 200px;
+    height: 80px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    border-radius: 50px;
+    background: #22272f;
+    box-shadow:  20px 20px 60px #1d2128,
+                 -20px -20px 60px #272d36;
+}
+.lanl:hover{
     border-radius: 50px;
     background: #f7f7f7;
     box-shadow:  5px 5px 10px #d2d2d2,
              -5px -5px 10px #ffffff;
+}
+.land:hover{
+    border-radius: 50px;
+    background: #22272f;
+    box-shadow:  5px 5px 10px #1d2128,
+                -5px -5px 10px #272d36;
 }

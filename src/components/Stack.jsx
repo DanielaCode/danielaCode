@@ -7,7 +7,9 @@ import htmlImg from '../assets/html5.png'
 import cssImg from '../assets/css.png'
 import jsImg from '../assets/js.png'
 import nodeImg from '../assets/node.png'
+import { useThemeContext } from '../providers/GeneralProvider'
 export const Stack = () => {
+  const theme = useThemeContext()
   const languages =[
     {
       name:"ReactJs",
@@ -46,7 +48,7 @@ export const Stack = () => {
     }
   ]
   const nodes= languages.map((l)=>
-    <div className={styles.lan}>
+    <div className={`${theme.theme?styles.lanl:styles.land} `}>
       <img src={l.logo} alt="" />
       <h3>{l.name}</h3>
     </div>

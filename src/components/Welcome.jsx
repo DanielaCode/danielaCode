@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Welcome.module.css'
-import me from '../assets/foto.png'
+import me from '../assets/foto1.png'
 export const Welcome = () => {
   return (
     <div className={styles.welcome}>
@@ -10,7 +10,7 @@ export const Welcome = () => {
         <p className={`tittle`}>I</p>
         <p className={`tittle`}> build</p>
         <p className={`tittle`}> web</p>
-        <p className={`tittle`}> applications.</p>
+        <p className={`tittle`}> apps.</p>
       </div>
       <img className={styles.me} src={me} alt="me" />
     </div>
