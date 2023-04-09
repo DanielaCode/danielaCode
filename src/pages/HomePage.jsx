@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Welcome from '../components/Welcome'
 import About from '../components/About'
 import Stack from '../components/Stack'
-import PathToFollow from '../components/PathToFollow'
 import styles from './HomePage.module.css';
 import {useThemeContext} from '../providers/GeneralProvider'
 import insta from '../assets/Instagram.png'
@@ -16,27 +15,32 @@ import gh2 from '../assets/GitHub2.png'
 import { useRefContext } from '../providers/RefProvider'
 
 const HomePage=()=>{
-
+  const generateKey = (pre) => {
+    return `${ pre }${Math.random()}${ new Date().getTime() }`;
+  }
   const theme = useThemeContext();
   const [menuOn, setMenuOn] = useState(false);
   const refs = useRefContext()
   const socialMedia=[
     {
+      id: generateKey("1"),
       img:theme.theme?linkedin:linkedin2,
       link:"https://www.linkedin.com/in/danielacode/"
     },
     {
+      id: generateKey("2"),
       img:theme.theme?insta:insta2,
       link:"https://www.instagram.com/danielagtrzp/"
     },
     {
+      id: generateKey("3"),
       img:theme.theme?gh:gh2,
       link:"https://github.com/DanielaCode"
     }
   ]
   const sm = socialMedia.map((item)=>
-      <a href={item.link} target='_blank'>
-         <img src={item.img}/>
+      <a href={item.link} target='_blank' key={item.id}>
+         <img src={item.img} />
       </a>
   )
   const handleMenuHover=(e)=>{
@@ -49,9 +53,11 @@ const HomePage=()=>{
   useEffect( handleClick = (anchor)=> {
     var element;
       if (anchor==="about") {
-          element = refs.about.current;
-      } else {
-          element = refs.stack.current;
+        element = refs.about.current;
+      } else if(anchor==="stack"){
+        element = refs.stack.current;
+      } else if(anchor==="dani"){
+        setMenuOn(!menuOn)
       }
       if (element) {
           element.scrollIntoView({
@@ -77,7 +83,7 @@ const HomePage=()=>{
               </ul>
             </nav>
           }
-          <p className={styles.name} >daniela.</p>
+          <p className={styles.name} onClick={()=>handleClick("dani")}>daniela.</p>
 
         </div>
        </header>

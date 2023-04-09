@@ -1,5 +1,4 @@
 .cursor{
-    grid-column: 4/10;
     align-self: flex-start;
     display: flex;
 }
