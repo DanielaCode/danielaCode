@@ -1,9 +1,12 @@
 import React from 'react'
 import styles from './About.module.css'
 import Cursor from './Cursor'
+import { useRefContext } from '../providers/RefProvider'
+
 export const About = () => {
+  const refs = useRefContext();
   return (
-    <div className={styles.about}>
+    <div className={styles.about} ref={refs.about}>
       <h2 className='semiBold'>About me</h2>
       <Cursor>
         <p className={styles.info}>

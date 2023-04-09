@@ -2,15 +2,16 @@ import { useState } from 'react'
 import './App.css'
 import HomePage from './pages/HomePage'
 import GeneralProvider from './providers/GeneralProvider'
+import RefProvider from './providers/RefProvider'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <GeneralProvider>
+      <RefProvider>
       <div className="App">
         <HomePage/>
       </div>
+      </RefProvider>
     </GeneralProvider>
   )
 }

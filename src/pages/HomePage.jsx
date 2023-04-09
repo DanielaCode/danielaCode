@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Welcome from '../components/Welcome'
 import About from '../components/About'
 import Stack from '../components/Stack'
@@ -13,11 +13,13 @@ import linkedin2 from '../assets/LinkedIn2.png'
 
 import gh from '../assets/GitHub.png'
 import gh2 from '../assets/GitHub2.png'
+import { useRefContext } from '../providers/RefProvider'
 
 const HomePage=()=>{
 
   const theme = useThemeContext();
   const [menuOn, setMenuOn] = useState(false);
+  const refs = useRefContext()
   const socialMedia=[
     {
       img:theme.theme?linkedin:linkedin2,
@@ -43,9 +45,22 @@ const HomePage=()=>{
   const handleMenuOut=(e)=>{
     setMenuOn(false)
   }
-  const handleClick = ()=> {
-    
-  };
+  let handleClick;
+  useEffect( handleClick = (anchor)=> {
+    var element;
+      if (anchor==="about") {
+          element = refs.about.current;
+      } else {
+          element = refs.stack.current;
+      }
+      if (element) {
+          element.scrollIntoView({
+          behavior: "smooth",
+            block: "start",
+        });
+     }
+  },[]);
+
   return (
     <div className={`${styles.HomePage} ${theme.theme?styles.ligth:styles.dark}`}>
        <header className={`semiBold ${styles.header}`}>
@@ -57,8 +72,8 @@ const HomePage=()=>{
           {menuOn &&
             <nav>
               <ul>
-                <li onClick={handleClick}>about.</li>
-                <li onClick={handleClick}>stack.</li>
+                <li onClick={()=>handleClick("about")}>about.</li>
+                <li onClick={()=>handleClick("stack")}>stack.</li>
               </ul>
             </nav>
           }

@@ -8,8 +8,12 @@ import cssImg from '../assets/css.png'
 import jsImg from '../assets/js.png'
 import nodeImg from '../assets/node.png'
 import { useThemeContext } from '../providers/GeneralProvider'
+import { useRefContext } from '../providers/RefProvider'
+
+
 export const Stack = () => {
   const theme = useThemeContext()
+  const refs = useRefContext()
   const languages =[
     {
       name:"ReactJs",
@@ -54,7 +58,7 @@ export const Stack = () => {
     </div>
   );
   return (
-    <div className={styles.stack}>
+    <div className={styles.stack} ref={refs.stack}>
       <h2 className='semiBold'>My stack so far</h2>
       <div className={styles.container}>
           {nodes}
