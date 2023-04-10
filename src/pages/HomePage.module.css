@@ -119,8 +119,7 @@ footer{
     grid-template-columns: repeat(12,1fr);
     align-items: center;
     gap: 10px;
-    margin: 5vh 0;
-    padding: 0 20vw;
+    padding: 5vh 20vw;
 }
 footer div{
     display: flex;
@@ -163,7 +162,10 @@ footer div{
    
 }
 @media(max-width:1440px){
-    .main, .header,footer{
+    .main, .header{
         padding: 0;
+    }
+    footer{
+        padding:5vh 0;
     }
 }
