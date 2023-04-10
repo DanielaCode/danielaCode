@@ -120,6 +120,7 @@ footer{
     align-items: center;
     gap: 10px;
     margin: 5vh 0;
+    padding: 0 20vw;
 }
 footer div{
     display: flex;
@@ -159,9 +160,10 @@ footer div{
     .contact h2, .contact p{
         font-size: 8px;
     }
+   
 }
 @media(max-width:1440px){
-    .main, .header{
+    .main, .header,footer{
         padding: 0;
     }
 }
