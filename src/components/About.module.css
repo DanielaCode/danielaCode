@@ -11,3 +11,15 @@
     grid-column: 3/11;
     text-align: justify;
 }
+a{
+    color: #22272f;
+}
+a:link{
+    color: #22272f;
+}
+a:visited{
+    color: #22272f;
+}
+a:active{
+    color: #22272f;
+}

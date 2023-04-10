@@ -6,6 +6,12 @@
     background-color: #22272f;
     color: #f7f7f7;
 }
+.headerDark{
+    background-color: rgba(34, 39, 47, 0.5);
+}
+.headerLigth{
+    background-color: rgba(247, 247, 247, 0.5);
+}
 .homePage{
     position: relative;
     display: grid;
@@ -113,18 +119,25 @@ footer{
     grid-template-columns: repeat(12,1fr);
     align-items: center;
     gap: 10px;
-    margin-top: 5vh;
+    margin: 5vh 0;
 }
 footer div{
-    grid-column: 3/11;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-footer div a {
+.sm{
+    grid-column: 7/11;
+}
+.contact{
+    flex-direction: column;
+    grid-column: 3/7;
+    align-items: flex-start;
+}
+.sm a {
     width: 50px;
 }
-footer div a img{
+.sm a img{
     width: 100%;
     margin: 0;
 }
@@ -142,6 +155,9 @@ footer div a img{
         background-color: #22272f;
         color: #f7f7f7;
         padding: 1rem;
+    }
+    .contact h2, .contact p{
+        font-size: 8px;
     }
 }
 @media(max-width:1440px){

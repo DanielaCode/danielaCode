@@ -69,7 +69,7 @@ const HomePage=()=>{
 
   return (
     <div className={`${styles.HomePage} ${theme.theme?styles.ligth:styles.dark}`}>
-       <header className={`semiBold ${styles.header}`}>
+       <header className={`semiBold ${styles.header} ${theme.theme?styles.headerLigth:styles.headerDark}`}>
         <label className={styles.switch}>
           <input type='checkbox' value={theme} onChange={theme.handleTheme}/>
           <span className={`${styles.slider} ${styles.round}`}></span>
@@ -93,7 +93,12 @@ const HomePage=()=>{
         <Stack/>
        </main>
        <footer>
-        <div>
+        <div className={styles.contact}>
+          <h2>Get in touch</h2>
+          <p>Email: danielagp96@gmail.com</p>
+          <p>Phone: +525619293640</p>
+        </div>
+        <div className={styles.sm}>
           {sm}
         </div>
        </footer>
